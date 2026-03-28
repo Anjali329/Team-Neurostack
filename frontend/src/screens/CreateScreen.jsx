@@ -6,6 +6,8 @@ import { Play } from 'lucide-react';
 export default function CreateScreen() {
   const [title, setTitle] = useState('');
   const [notes, setNotes] = useState('');
+  const [youtubeLink, setYoutubeLink] = useState('');
+  const [revisionSummary, setRevisionSummary] = useState('');
   const [links, setLinks] = useState(['']);
   const [checklist, setChecklist] = useState(['']);
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ export default function CreateScreen() {
   const handleDynamicInput = (idx, value, list, setList) => {
     const updated = [...list];
     updated[idx] = value;
-    if (idx === updated.length - 1 && value) updated.push(''); // auto add new line
+    if (idx === updated.length - 1 && value) updated.push(''); 
     setList(updated);
   };
 
@@ -25,6 +27,8 @@ export default function CreateScreen() {
     const sess = await createSession({
       title: title || 'Untitled Task',
       notes,
+      youtube_link: youtubeLink,
+      revision_summary: revisionSummary,
       links: cleanLinks,
       checklist: cleanChecklist
     });
@@ -42,6 +46,16 @@ export default function CreateScreen() {
         <div className="form-group">
           <label className="form-label">What are you working on?</label>
           <input type="text" placeholder="e.g., Fix login screen bug" value={title} onChange={e => setTitle(e.target.value)} autoFocus required />
+        </div>
+        
+        <div className="form-group">
+          <label className="form-label">YouTube Revision Playlist Link</label>
+          <input type="url" placeholder="https://youtube.com/playlist?list=..." value={youtubeLink} onChange={e => setYoutubeLink(e.target.value)} />
+        </div>
+
+        <div className="form-group">
+          <label className="form-label">Revision Summary</label>
+          <input type="text" placeholder="Short takeaway for tomorrow's revision..." value={revisionSummary} onChange={e => setRevisionSummary(e.target.value)} />
         </div>
         
         <div className="form-group">

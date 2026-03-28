@@ -21,6 +21,8 @@ def get_demo_sessions():
         "notes": "The JWT token refresh is failing silently when the access token expires.\n"
                  "Need to check the interceptor in api.js and the /refresh endpoint.\n"
                  "Suspect the refresh token cookie isn't being sent with credentials.",
+        "youtube_link": "https://www.youtube.com/playlist?list=PL4cUxeGkcC9g8OhpOZxNdxX1hB_A02iK",
+        "revision_summary": "Revise JWT token lifecycles and HTTP-only cookie security tomorrow.",
         "links": [
             "https://github.com/team/project/issues/42",
             "https://jwt.io/",
@@ -48,6 +50,8 @@ def get_demo_sessions():
         "notes": "Working on the weekly usage chart. Using Recharts for graphs.\n"
                  "Need to aggregate data by day and show tooltips on hover.\n"
                  "Color palette should match the brand guide (blue-500 primary).",
+        "youtube_link": "https://www.youtube.com/watch?v=0kRoZcLCE6I&list=PLZlA0Gpn_vH9i0J0B1uE6e1Q47hX1g8gU",
+        "revision_summary": "Review Recharts ResponsiveContainer and Tooltip customizations.",
         "links": [
             "https://recharts.org/en-US/api",
             "https://www.figma.com/file/abc123/Dashboard-Designs",
@@ -76,6 +80,8 @@ def get_demo_sessions():
                  "Need to rewrite the seed script and update the ORM config.\n"
                  "Also need to handle the JSONB column type differences.\n"
                  "Asked DevOps for staging DB credentials — waiting on access.",
+        "youtube_link": "https://www.youtube.com/watch?v=sM2yTf5IqN4&list=PL6gx4Cwl9DGCkg2Il3HzNC1Ph3T_rs200",
+        "revision_summary": "Study PostgreSQL JSONB indexing and SQLAlchemy 2.0 migration patterns.",
         "links": [
             "https://docs.sqlalchemy.org/en/20/dialects/postgresql.html",
             "https://wiki.internal.company/db-migration-guide",

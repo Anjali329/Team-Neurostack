@@ -56,6 +56,8 @@ def create_session():
         "title": data.get("title", "Untitled Session"),
         "notes": data.get("notes", ""),
         "links": data.get("links", []),
+        "youtube_link": data.get("youtube_link", ""),
+        "revision_summary": data.get("revision_summary", ""),
         "checklist": [
             {"text": item, "done": False}
             for item in data.get("checklist", [])
