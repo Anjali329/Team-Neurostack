@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getSessions } from '../api';
-import { Clock, Play, BarChart3, Youtube, BookOpen, Calendar as CalendarIcon, Target } from 'lucide-react';
+import { Clock, Play, BarChart3, PlaySquare, BookOpen, Calendar as CalendarIcon, Target } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function TimelineScreen() {
@@ -123,7 +123,7 @@ export default function TimelineScreen() {
                       <div style={{ background: 'var(--bg)', borderRadius: '8px', padding: '1rem', marginTop: '1rem', borderLeft: '4px solid #ef4444' }}>
                         {s.youtube_link && (
                           <a href={s.youtube_link} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#ef4444', textDecoration: 'none', fontWeight: 600, marginBottom: '0.5rem' }}>
-                            <Youtube size={18}/> Watch YouTube Revision Playlist
+                            <PlaySquare size={18}/> Watch YouTube Revision Playlist
                           </a>
                         )}
                         {s.revision_summary && (
