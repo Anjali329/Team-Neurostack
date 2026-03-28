@@ -52,7 +52,7 @@ export default function ActiveScreen() {
   const formatTime = (secs) => {
     const h = String(Math.floor(secs / 3600)).padStart(2, '0');
     const m = String(Math.floor((secs % 3600) / 60)).padStart(2, '0');
-    const s = String(secs % 60).padStart(2, '0');
+    const s = String(Math.floor(secs % 60)).padStart(2, '0');
     return `${h}:${m}:${s}`;
   };
 
@@ -61,10 +61,10 @@ export default function ActiveScreen() {
   return (
     <div className="card" style={{ borderTop: '4px solid var(--primary)' }}>
       <div className="card-header" style={{ textAlign: 'center' }}>
-        <h2 className="card-title">{session.title}</h2>
-        <div className="live-timer">{formatTime(elapsed)}</div>
+        <h2 className="card-title" style={{ marginBottom: '1.5rem'}}>{session.title}</h2>
+        {/* <div className="live-timer">{formatTime(elapsed)}</div> */}
         <button onClick={handlePause} className="btn btn-danger" style={{ fontSize: '1.2rem', padding: '1rem 3rem' }}>
-          <Pause size={24}/> Pause Timer
+          <Pause size={24}/> Pause Session
         </button>
       </div>
 
